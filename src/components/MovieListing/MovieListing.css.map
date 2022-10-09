@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,WAAW;AACX,UAAU,CAAC;EACP,MAAM,EAAE,MAAM;CAMjB;;AARD,AAGI,WAHO,CAGP,EAAE;AAFN,UAAU,CAEN,EAAE,CAAC;EACC,KAAK,ECFI,OAAO;EDGhB,aAAa,EAAE,IAAI;EACnB,WAAW,EAAE,GAAG;CACnB",
+    "sources": [
+        "MovieListing.scss",
+        "../../common/colors.scss"
+    ],
+    "names": [],
+    "file": "MovieListing.css"
+}
