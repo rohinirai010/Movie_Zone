@@ -6,6 +6,8 @@ import Footer from "./components/Footer/Footer";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
 import MovieDetails from "./components/MovieDetails/MovieDetails";
 import './App.scss';
+import TopRatedMoviesPage from './pages/toprated/TopRatedMoviesPage';
+import UpcomingMoviesPage from './pages/upcomingmovies/UpcomingMoviesPage';
 
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
           <Routes>
           <Route path="/" exact element={<Home/>} />
           <Route path="/movie/:imdbID" element={<MovieDetails/>} />
+          <Route path="/topratedmovies" element={<TopRatedMoviesPage/>} />
+          <Route path="/upcomingmovies" element={<UpcomingMoviesPage/>} />
           <Route element={<PageNotFound/>} />
           </Routes>
         </div>
