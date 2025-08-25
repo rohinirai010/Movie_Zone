@@ -1,10 +1,62 @@
 @import "../../common/colors.scss";
+
 .movie-section {
     display: flex;
     justify-content: space-evenly;
-    padding: 40px 0px;
+    padding: 40px 20px;
     color: $font-primary;
     font-weight: 400;
+    
+    // Mobile responsiveness
+    @media (max-width: 768px) {
+        flex-direction: column;
+        padding: 20px 0px;
+        gap: 30px;
+    }
+}
+
+.section-left {
+    flex: 1;
+    
+    @media (max-width: 768px) {
+        order: 2; // Movie details come after image on mobile
+    }
+}
+
+.section-right {
+    margin-left: 30px;
+    img{
+
+        border-radius: 14px;
+    }
+    
+    @media (max-width: 768px) {
+        margin-left: 0;
+        order: 1; // Image comes first on mobile
+        text-align: center;
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+.movie-title {
+    font-size: 40px;
+    color: $font-primary;
+    
+    @media (max-width: 768px) {
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    @media (max-width: 480px) {
+        font-size: 26px;
+    }
 }
 
 .movie-rating {
@@ -12,33 +64,98 @@
     margin-top: 20px;
     color: $font-secondary;
     display: flex;
+    flex-wrap: wrap;
+    
     span {
         margin-right: 20px;
+        margin-bottom: 10px;
+    }
+    
+    @media (max-width: 768px) {
+        justify-content: center;
+        padding-left: 0;
+        margin-top: 15px;
+        
+        span {
+            margin-right: 15px;
+            font-size: 14px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        
+        span {
+            margin-right: 0;
+            margin-bottom: 8px;
+        }
     }
 }
 
-.movie-title {
-    font-size: 40px;
-    color: $font-primary;
-}
-
 .movie-plot {
-    margin-top: 20px;
-    line-height: 1.8rem;
+    margin-top: 12px;
+    line-height: 1.5rem;
+    font-size: 15px;
+    text-align: justify;
+    
+    
+    @media (max-width: 768px) {
+        text-align: center;
+        font-size: 13px;
+        line-height: 1.3rem;
+        margin: 12px 0;
+        text-align: justify;
+    }
 }
 
-.movie-info>div span:first-child {
-    padding: 10px 0px;
-    color: $font-primary;
-    font-weight: 600;
-    width: 100px;
-    display: inline-block;
+.movie-info {
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+    
+    > div {
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(121, 184, 243, 0.2);
+            
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+        
+        span:first-child {
+            padding: 10px 0px;
+            color: $font-primary;
+            font-weight: 600;
+            width: 100px;
+            display: inline-block;
+            
+            @media (max-width: 768px) {
+                width: auto;
+                padding: 5px 0;
+                margin-bottom: 5px;
+            }
+        }
+        
+        span {
+            color: $font-secondary;
+            
+            @media (max-width: 768px) {
+                font-size: 14px;
+            }
+        }
+    }
 }
 
-.movie-info>div span {
-    color: $font-secondary;
-}
-
+// Icon colors remain the same
 .fa-star {
     color: #ff9e00;
 }
@@ -53,8 +170,4 @@
 
 .fa-calendar {
     color: peachpuff;
-}
-
-.section-right {
-    margin-left: 30px;
 }
